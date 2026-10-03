@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParkFlow - Smart Parking Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="IMG_6766 2.PNG" class="brand-logo-img">
+        <div class="brand-text">
+          <h2>ParkFlow</h2>
+          <span>Smart Parking Management System</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-calendar-check"></i> Bookings</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-users"></i> User Management</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-square-parking"></i> Parking Lots</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="footer-logo"><i class="fa-solid fa-car"></i></div>
+        <p><strong>ParkFlow</strong> </p>
+        <p class="subtext">Smarter Parking for a Better Tomorrow</p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="top-header">
+        <div class="header-title">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h3>Smart Parking Management System</h3>
+            <span>Find • Park • Go</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="status-badge"><span class="dot"></span> System Online</div>
+          <div class="datetime" id="current-datetime">Tue, 02 Oct 2026 | 10:15 AM</div>
+          <div class="user-profile">
+            <div class="avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="user-info">
+              <span class="name">Admin</span>
+              <span class="role">System Administrator</span>
+            </div>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Top Summary Cards -->
+      <section class="stats-cards">
+        <div class="card card-blue">
+          <div class="card-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <div class="card-info">
+            <span class="card-title">Total Slots</span>
+            <span class="card-value">90</span>
+            <span class="card-subtext">Across 3 Levels</span>
+          </div>
+        </div>
+
+        <div class="card card-green">
+          <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+          <div class="card-info">
+            <span class="card-title">Available Slots</span>
+            <span class="card-value">50</span>
+            <span class="card-subtext">34.4% Free</span>
+          </div>
+        </div>
+
+        <div class="card card-red">
+          <div class="card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+          <div class="card-info">
+            <span class="card-title">Occupied Slots</span>
+            <span class="card-value">40</span>
+            <span class="card-subtext">56.7% Occupied</span>
+          </div>
+        </div>
+
+        <div class="card card-yellow">
+          <div class="card-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+          <div class="card-info">
+            <span class="card-title">Reserved Slots</span>
+            <span class="card-value">16</span>
+            <span class="card-subtext">8.9% Reserved</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Grid Body -->
+      <section class="dashboard-body">
+        <!-- Left: Parking Slots Allocation -->
+        <div class="panel slots-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <i class="fa-solid fa-layer-group"></i>
+              <div>
+                <h4>Parking Slot Allocation</h4>
+              </div>
+            </div>
+            <div class="status-legend">
+              <span class="legend-item"><span class="legend-color available"></span> Available</span>
+              <span class="legend-item"><span class="legend-color occupied"></span> Occupied</span>
+              <span class="legend-item"><span class="legend-color reserved"></span> Reserved</span>
+            </div>
+          </div>
+
+          <!-- Level G -->
+          <div class="level-section">
+            <div class="level-header">
+              <div class="level-badge"><i class="fa-solid fa-parking"></i> Level G <span>(Ground Floor)</span></div>
+              <div class="level-meta">Total: 30 | Available: 19 | Occupied: 9 | Reserved: 2</div>
+            </div>
+            <div class="slots-grid" id="slots-level-g"></div>
+          </div>
+
+          <!-- Level L1 -->
+          <div class="level-section">
+            <div class="level-header">
+              <div class="level-badge"><i class="fa-solid fa-parking"></i> Level L1 <span>(First Floor)</span></div>
+              <div class="level-meta">Total: 30 | Available: 00 | Occupied: 00 | Reserved: 7</div>
+            </div>
+            <div class="slots-grid" id="slots-level-l1"></div>
+          </div>
+
+          <!-- Level L2 -->
+          <div class="level-section">
+            <div class="level-header">
+              <div class="level-badge"><i class="fa-solid fa-parking"></i> Level L2 <span>(Second Floor)</span></div>
+              <div class="level-meta">Total: 00 | Available: 00 | Occupied: 00 | Reserved: 6</div>
+            </div>
+            <div class="slots-grid" id="slots-level-l2"></div>
+          </div>
+        </div>
+
+        <!-- Right: Live Parking Status Gauge Panel -->
+        <div class="panel live-status-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <i class="fa-solid fa-chart-pie"></i>
+              <div>
+                <h4>Live Parking Status</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="gauges-container">
+            <!-- Level G Gauge -->
+            <div class="gauge-card">
+              <h5>Level G</h5>
+              <span class="gauge-sub">00 / 60</span>
+              <div class="circular-progress" style="--percent: 62;">
+                <div class="value">00%</div>
+              </div>
+              <div class="gauge-details">
+                <p><span class="dot available"></span> Available <strong>22</strong></p>
+                <p><span class="dot occupied"></span> Occupied <strong>31</strong></p>
+                <p><span class="dot reserved"></span> Reserved <strong>7</strong></p>
+              </div>
+            </div>
+
+            <!-- Level L1 Gauge -->
+            <div class="gauge-card">
+              <h5>Level L1</h5>
+              <span class="gauge-sub">00 / 60</span>
+              <div class="circular-progress" style="--percent: 67;">
+                <div class="value">00%</div>
+              </div>
+              <div class="gauge-details">
+                <p><span class="dot available"></span> Available <strong>20</strong></p>
+                <p><span class="dot occupied"></span> Occupied <strong>33</strong></p>
+                <p><span class="dot reserved"></span> Reserved <strong>7</strong></p>
+              </div>
+            </div>
+
+            <!-- Level L2 Gauge -->
+            <div class="gauge-card">
+              <h5>Level L2</h5>
+              <span class="gauge-sub">00 / 60</span>
+              <div class="circular-progress" style="--percent: 67;">
+                <div class="value">00%</div>
+              </div>
+              <div class="gauge-details">
+                <p><span class="dot available"></span> Available <strong>00</strong></p>
+                <p><span class="dot occupied"></span> Occupied <strong>00</strong></p>
+                <p><span class="dot reserved"></span> Reserved <strong>00</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
